@@ -1,3 +1,9 @@
+
+<p align = "center">
+  <a href="https://discord.com">
+  <img src="https://github.com/Hacking-Notes/Vulnerability-Scanner/blob/main/Documents/logo.png">
+</p>
+
 # VulnScan
 
 Let me rephrase and provide more details about the following announcement:
