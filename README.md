@@ -35,6 +35,10 @@ Hey you! Yeah, you with the skills! Wanna earn credits for making our project ev
 
 https://user-images.githubusercontent.com/118412415/221425598-136810fe-d3bc-47cb-a253-a25a4639d43b.mp4
 
+## Disclaimer
+
+The tool provided on this GitHub page is intended for educational and research purposes only. The creators and maintainers of this tool are not responsible for any misuse or illegal use of the tool. It is the responsibility of the users to ensure that they comply with all applicable laws and regulations while using the tool.
+
 ---
 
   ![image](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.net-model.com%2Fimg%2Flogo-discord.png&f=1&nofb=1&ipt=0b347aa70a05f91f4015e7e1049581eba2f397f35b8f27ebb18ae2190210f8ea&ipo=images)ㅤContact Me: Discord --> LXC#3100
