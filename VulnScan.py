@@ -12,6 +12,7 @@ import concurrent.futures
 import concurrent.futures
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
+# from pyChatGPT import ChatGPT ---> Install the following module (Module is inserted in "def ChatGPT()")
 
 print("""
 ██╗   ██╗██╗   ██╗██╗     ███╗   ██╗███████╗ ██████╗ █████╗ ███╗   ██╗
