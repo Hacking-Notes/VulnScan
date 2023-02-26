@@ -25,6 +25,20 @@ In terms of future development, vulnScan has several features in the pipeline th
 
 VulnScan will enhance its versatility and customization with the introduction of new features, which will aid website owners and bug bounty hunters in identifying threats more easily and efficiently.
 
+## Commands
+
+```
+git clone https://github.com/Hacking-Notes/VulnScan.git       ---> Download the files
+
+pip install -r requirements.txt                               ---> Install requirements
+
+python3 VulnScan.py                                           ---> Launch the script
+```
+
+## Demo
+
+https://user-images.githubusercontent.com/118412415/221425598-136810fe-d3bc-47cb-a253-a25a4639d43b.mp4
+
 ## Credits
 
 Hey you! Yeah, you with the skills! Wanna earn credits for making our project even better? Then join us, don't be shy, we need you!
@@ -32,10 +46,6 @@ Hey you! Yeah, you with the skills! Wanna earn credits for making our project ev
 <ul style="list-style-type:disc;">
   <li><a href="https://github.com/terry3041/pyChatGPT">pyChatGPT</a> ---> Python ChatGPT requests</li>
 </ul>
-
-## Demo
-
-https://user-images.githubusercontent.com/118412415/221425598-136810fe-d3bc-47cb-a253-a25a4639d43b.mp4
 
 ## Disclaimer
 
