@@ -31,6 +31,10 @@ VulnScan will enhance its versatility and customization with the introduction of
 
 Hey you! Yeah, you with the skills! Wanna earn credits for making our project even better? Then join us, don't be shy, we need you!
 
+<ul style="list-style-type:disc;">
+  <li><a href="https://github.com/terry3041/pyChatGPT">pyChatGPT</a> ---> Python ChatGPT requests</li>
+</ul>
+
 ## Demo
 
 https://user-images.githubusercontent.com/118412415/221425598-136810fe-d3bc-47cb-a253-a25a4639d43b.mp4
