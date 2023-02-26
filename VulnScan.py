@@ -284,10 +284,10 @@ def ChatGPT(JS_Unique_file_name):
                 if datetime.datetime.today() < expiration_date:
                     return token
         print("""
-                1. Go to https://chat.openai.com/chat and open the developer tools by F12.
-                2. Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com.
-                3. Copy the value in the Cookie Value field.
-                """)
+        1. Go to https://chat.openai.com/chat and open the developer tools by F12.
+        2. Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com.
+        3. Copy the value in the Cookie Value field.
+        """)
         token = input("Enter your ChatGPT token: ")
         with open(TOKEN_FILE, "w") as f:
             f.write(f"{token} {datetime.datetime.today().strftime('%Y-%m-%d')}")
