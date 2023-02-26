@@ -27,6 +27,10 @@ In terms of future development, vulnScan has several features in the pipeline th
 
 VulnScan will enhance its versatility and customization with the introduction of new features, which will aid website owners and bug bounty hunters in identifying threats more easily and efficiently.
 
+## Credits
+
+Hey you! Yeah, you with the skills! Wanna earn credits for making our project even better? Then join us, don't be shy, we need you!
+
 ## Demo
 
 https://user-images.githubusercontent.com/118412415/221425598-136810fe-d3bc-47cb-a253-a25a4639d43b.mp4
