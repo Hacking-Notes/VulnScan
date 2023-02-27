@@ -10,21 +10,6 @@ Introducing vulnScan - the ultimate vulnerability scanning tool that'll make hac
 
 vulnScan is a powerful vulnerability scanning tool designed to help website owners protect their websites from cyber threats. It uses cutting-edge technology that leverages ChatGPT, an AI language model trained by OpenAI, to verify the JavaScript of your website and search for vulnerabilities. With vulnScan, you can detect security vulnerabilities and fix them before they can be exploited by cybercriminals.
 
-## Development
-
-In terms of future development, vulnScan has several features in the pipeline that will make it even more powerful and useful for website owners. These include:
-
-<ul style="list-style-type:disc;">
-  <li>Change UI</li>
-  <li>Add option to bring your own list of URL's</li>
-  <li>Implement the URL's search function</li>
-  <li>Add the ability to detect SQL vulnerabilities.</li>
-  <li>Add the ability to detect CSRF vulnerabilities.</li>
-  <li>...</li>
-</ul> 
-
-VulnScan will enhance its versatility and customization with the introduction of new features, which will aid website owners and bug bounty hunters in identifying threats more easily and efficiently.
-
 ## Commands
 
 ```
@@ -41,6 +26,21 @@ pip install -U pyChatGPT
 ```
 python3 VulnScan.py                                           ---> Launch the script
 ```
+
+## Development
+
+In terms of future development, vulnScan has several features in the pipeline that will make it even more powerful and useful for website owners. These include:
+
+<ul style="list-style-type:disc;">
+  <li>Change UI</li>
+  <li>Add option to bring your own list of URL's</li>
+  <li>Implement the URL's search function</li>
+  <li>Add the ability to detect SQL vulnerabilities.</li>
+  <li>Add the ability to detect CSRF vulnerabilities.</li>
+  <li>...</li>
+</ul> 
+
+VulnScan will enhance its versatility and customization with the introduction of new features, which will aid website owners and bug bounty hunters in identifying threats more easily and efficiently.
 
 ## Demo
 
