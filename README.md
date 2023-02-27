@@ -32,6 +32,12 @@ git clone https://github.com/Hacking-Notes/VulnScan.git       ---> Download the 
 
 pip install -r requirements.txt                               ---> Install requirements
 
+pip install bs4
+pip install -U pyChatGPT
+```
+<b>Install <a href="https://www.google.com/chrome/">Google Chrome</a> / <a href="https://www.chromium.org/chromium-projects/">Chromium </a> before launching the programe</b>
+
+```
 python3 VulnScan.py                                           ---> Launch the script
 ```
 
