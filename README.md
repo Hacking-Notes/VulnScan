@@ -10,6 +10,8 @@ Introducing VulnScan - the ultimate vulnerability scanning tool that'll make hac
 
 vulnScan is a powerful vulnerability scanning tool designed to help website owners protect their websites from cyber threats. It uses cutting-edge technology that leverages ChatGPT, an AI language model trained by OpenAI, to verify the JavaScript of your website and search for vulnerabilities. With vulnScan, you can detect security vulnerabilities and fix them before they can be exploited by cybercriminals.
 
+<b>Just a heads up: The tool is NOT utilizing the ChatGPT API due to its input limitation (tokens).</b>
+
 ## Commands
 
 ```
