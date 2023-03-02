@@ -14,7 +14,7 @@ vulnScan is a powerful vulnerability scanning tool designed to help website owne
 
 ## Commands
 
-<b>Using OpenAI API</b>
+<b>Using OpenAI API</b> (SOON AVAILABLE)
 ```
 git clone https://github.com/Hacking-Notes/VulnScan.git       ---> Download the files
 
