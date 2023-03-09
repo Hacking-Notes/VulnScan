@@ -10,39 +10,16 @@ Introducing VulnScan - the ultimate vulnerability scanning tool that'll make hac
 
 vulnScan is a powerful vulnerability scanning tool designed to help website owners protect their websites from cyber threats. It uses cutting-edge technology that leverages ChatGPT, an AI language model trained by OpenAI, to verify the JavaScript of your website and search for vulnerabilities. With vulnScan, you can detect security vulnerabilities and fix them before they can be exploited by cybercriminals.
 
-<b>Just a heads up: The tool can run with your ChatGPT token or OpenAI API</b>
+<b>Just a heads up: This tool utilise ChatGPT (Turbo 3.5)</b> ---> <b>Get your API Key <a href="https://platform.openai.com/account/api-keys">Here</a></b>
 
 ## Commands
 
-<b>Using OpenAI API</b> (SOON AVAILABLE)
+<b>Using OpenAI API</b>
 ```
 git clone https://github.com/Hacking-Notes/VulnScan.git       ---> Download the files
 
 pip install -r requirements.txt                               ---> Install requirements
-
-# Manually installation, Prevent errors
-pip install bs4
-pip install openai
-
 ```
-Launch the script
-```
-python3 VulnScan.py                                           ---> Launch the script
-```
-<br><br>
-<b>Using ChatGPT Token</b>
-```
-git clone https://github.com/Hacking-Notes/VulnScan.git       ---> Download the files
-
-pip install -r requirements.txt                               ---> Install requirements
-
-# Manually installation, Prevent errors
-pip install bs4
-pip install openai
-pip install -U pyChatGPT
-```
-<b>Install <a href="https://www.google.com/chrome/">Google Chrome</a> / <a href="https://www.chromium.org/chromium-projects/">Chromium </a> before launching the programe</b> ---> Make sure chrome does not ask for keyring (<a href="https://askubuntu.com/questions/31786/chrome-asks-for-password-to-unlock-keyring-on-startup">example</a>)
-
 Launch the script
 ```
 python3 VulnScan.py                                           ---> Launch the script
