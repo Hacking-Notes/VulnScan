@@ -44,14 +44,6 @@ VulnScan will enhance its versatility and customization with the introduction of
 
 https://user-images.githubusercontent.com/118412415/221425598-136810fe-d3bc-47cb-a253-a25a4639d43b.mp4
 
-## Credits
-
-Hey you! Yeah, you with the skills! Wanna earn credits for making our project even better? Then join us, don't be shy, we need you!
-
-<ul style="list-style-type:disc;">
-  <li><a href="https://github.com/terry3041/pyChatGPT">pyChatGPT</a> ---> Python ChatGPT requests</li>
-</ul>
-
 ## Disclaimer
 
 The tool provided on this GitHub page is intended for educational and research purposes only. The creators and maintainers of this tool are not responsible for any misuse or illegal use of the tool. It is the responsibility of the users to ensure that they comply with all applicable laws and regulations while using the tool.
