@@ -3,68 +3,110 @@ import os
 import sys
 import json
 import time
-import datetime
+import openai
 import textwrap
 import requests
 import itertools
-import threading
 import concurrent.futures
 import concurrent.futures
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
-# from pyChatGPT import ChatGPT ---> Install the following module (Module is inserted in "def ChatGPT()")
 
 print("""
-██╗   ██╗██╗   ██╗██╗     ███╗   ██╗███████╗ ██████╗ █████╗ ███╗   ██╗
-██║   ██║██║   ██║██║     ████╗  ██║██╔════╝██╔════╝██╔══██╗████╗  ██║
-██║   ██║██║   ██║██║     ██╔██╗ ██║███████╗██║     ███████║██╔██╗ ██║
-╚██╗ ██╔╝██║   ██║██║     ██║╚██╗██║╚════██║██║     ██╔══██║██║╚██╗██║
- ╚████╔╝ ╚██████╔╝███████╗██║ ╚████║███████║╚██████╗██║  ██║██║ ╚████║
-  ╚═══╝   ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝                                                                                             
+██╗   ██╗██╗   ██╗██╗     ███╗   ██╗███████╗ ██████╗ █████╗ ███╗   ██╗    █████╗ ██╗
+██║   ██║██║   ██║██║     ████╗  ██║██╔════╝██╔════╝██╔══██╗████╗  ██║   ██╔══██╗██║
+██║   ██║██║   ██║██║     ██╔██╗ ██║███████╗██║     ███████║██╔██╗ ██║   ███████║██║
+╚██╗ ██╔╝██║   ██║██║     ██║╚██╗██║╚════██║██║     ██╔══██║██║╚██╗██║   ██╔══██║██║
+ ╚████╔╝ ╚██████╔╝███████╗██║ ╚████║███████║╚██████╗██║  ██║██║ ╚████║██╗██║  ██║██║
+  ╚═══╝   ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝╚═╝                                                                                                
 """)
 
 # Set Variables URL & Recursion Level ---> (URL_Finder)
-url = input('Enter the website URL: ').strip()
-print("")
-if not (url.startswith("http://") or url.startswith("https://")):
-    url = "https://" + url
+class Set_Variable1():
+    url = input('Enter the website URL: ').strip()
+    print("")
+    if not (url.startswith("http://") or url.startswith("https://")):
+        url = "https://" + url
 
-try:
-    response = requests.get(url)
-    if response.status_code == 200:
-        print("The script will follow internal links on the website up to the maximum recursion level specified.")
-        while True:
-            try:
-                max_recursion_level = int(input('Recursion Level (Between 1-3 | Default = 1): ').strip() or 1)
-                if 1 <= max_recursion_level <= 3:
-                    break
-                else:
-                    print('Input must be between 1 and 3')
-            except ValueError:
-                print('Input must be a number')
-        print("")
-except requests.exceptions.RequestException:
-    print('Could not connect to the website')
-except:
-    print('Invalid URL')
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            print("The script will follow internal links on the website up to the maximum recursion level specified.")
+            while True:
+                try:
+                    max_recursion_level = int(input('Recursion Level (Between 1-3 | Default = 1): ').strip() or 1)
+                    if 1 <= max_recursion_level <= 3:
+                        break
+                    else:
+                        print('Input must be between 1 and 3')
+                except ValueError:
+                    print('Input must be a number')
+            print("")
+    except requests.exceptions.RequestException:
+        print('Could not connect to the website')
+    except:
+        print('Invalid URL')
+url = Set_Variable1.url
 
 # Set file_name
 file_name = url[8:] + ".txt"
 
-# Set Variable JS_scanner_file_name        ---> (JS_Scanner)
-JS_scanner_file_name = file_name
+#2
+class Set_Variable2():
+    JS_scanner_file_name = file_name
+    instructions = """You're working in Cybersecurity. You have been searching vulnerability through source code for 20 years. Your task is now to analyse the following code while respecting the instructions.
 
-# Set Variable ChatGPT_file_name           ---> (ChatGPT)
-JS_Unique_file_name = "JS_Unique_staratlas.help.txt"
-JS_URL_file_name = "JS_URL_" + file_name
+    Instructions: 
+    1. A list of javascript code will be provided to you at the bottom, each javascript code is delimited by --- at the start and --- at the end and include a unique identifier (id[X],JS#[X]). (The X here is a place holder)
+    2. Analyse the javascript code
+    3. DO NOT INCLUDE THE RESPONSE IN THE TEMPLATE IF THE SNIPPET OF CODE IS NOT VULNERABLE
+    4. Use the following template to respond using the corresponding id and INCLUDING +++ AT THE START AND +++ AT THE END of each explanations
+    5. Do not include ANY other statement after using the template and make sure you have used the template exactly how it supposed to be use
 
-# Set Variable ChatGPT_file_name           ---> (ChatGPT)
-ChatGPT_file_name = "chatGPT_" + file_name
+    +++
+    (id[X],JS#[X]) 
+    Secure: [Vulnerable or Not Vulnerable]
 
-# Set Variable Clean_up_file_name          ---> (clean_up_files)
-Clean_up_file_name = "final_" + file_name
+    Text: [Explain SHORTLY, IF vulnerable, why it's vulnerable]
+    +++
 
-# Search URL's on the targeted website
+    DONT FORGET TO ADD THE +++ AT THE END
+
+    The following is all the javascript snippet you need to analyse
+    """
+
+#3
+class Set_Variable3():
+    JS_Unique_file_name = "JS_Unique_" + file_name
+
+    api_key_file = 'API_Key.txt'
+
+    if os.path.exists(api_key_file) and os.path.getsize(api_key_file) > 0:
+        with open(api_key_file, 'r') as f:
+            api_key = f.read().strip()
+    else:
+        print('''    1. Go to https://platform.openai.com/account/api-keys.
+    2. Create an API key and then proceed to paste it at this location.
+            ''')
+        api_key = input("Include your OpenAI API key: ")
+        with open(api_key_file, 'w') as f:
+            f.write(api_key)
+
+#4
+class Set_Variable4():
+    ChatGPT_file_name = "chatGPT_" + file_name
+
+#5
+class Set_Variable5():
+    JS_Unique_file_name = "JS_Unique_" + file_name
+    JS_URL_file_name = "JS_URL_" + file_name
+
+#6
+class Set_Variable6():
+    Clean_up_file_name = "final_" + file_name
+
+# ============================================================
+
 def URL_Finder(url, max_recursion_level):
 
     visited_urls = []
@@ -119,6 +161,7 @@ def URL_Finder(url, max_recursion_level):
         print("")
 
     if __name__ == '__main__':
+        max_recursion_level = int(max_recursion_level)
         while True:
             with concurrent.futures.ThreadPoolExecutor() as executor:
                 crawl_future = executor.submit(crawl_website, url, max_recursion_level, visited_urls)
@@ -128,8 +171,6 @@ def URL_Finder(url, max_recursion_level):
             urls.sort()  # Sort the URLs alphabetically
 
             number_of_urls_found = len(urls)
-            print("")
-            print("=" * 45)
             print("")
             print("VulnScan has found " + str(number_of_urls_found) + " pages ↓")
             print("")
@@ -145,13 +186,7 @@ def URL_Finder(url, max_recursion_level):
                 print(f"Unable to write to {file_name}")
             break
 
-        print("")
-        print("=" * 45)
-# Scan the Website for all the Javascript elements
-def JS_Scanner(JS_scanner_file_name):
-
-    print("")
-    print("Analysing Javascript elements, this could take a few minutes...")
+def Javascript(JS_scanner_file_name, instructions):
 
     def search_scripts(urls):
         # Set up a counter variable to generate unique IDs
@@ -232,114 +267,88 @@ def JS_Scanner(JS_scanner_file_name):
             # Increment the URL counter
             counter += 1
 
-    # Read in URLs from file
-    while True:
-        file_name = JS_scanner_file_name
-        try:
-            with open(file_name, "r") as f:
-                urls = f.read().splitlines()
-            break  # Exit the loop if the file was successfully opened
-        except FileNotFoundError:
-            print("Error: file not found. Please try again.\n")
+        return True
 
-    # Write output to a file
-    with open("JS_Unique_" + file_name, "a") as f:
-    # INSTRUCTIONS FOR CHAT-GPT
-        f.write(textwrap.dedent("""You're working in Cybersecurity. You have been searching vulnerability through source code for 20 years. Your task is now to analyse the following code wile respecting the instructions.
-
-    Instructions: 
-    1. A list of javascript code will be provided to you at the bottom, each javascript code is delimited by --- at the start and --- at the end and include a unique identifier (id[X],JS#[X]). (The X here is a place holder)
-    2. Analyse the javascript code
-    3. DO NOT INCLUDE THE RESPONSE IN THE TEMPLATE IF THE SNIPPET OF CODE IS NOT VULNERABLE
-    4. Use the following template to respond using the corresponding id and INCLUDING +++ AT THE START AND +++ AT THE END of each explanations
-    5. Do not include ANY other statement after using the template and make sure you have used the template exactly how it supposed to be use
-
-    +++
-    (id[X],JS#[X]) 
-    Secure: [Vulnerable or Not Vulnerable]
-
-    Text: [Explain SHORTLY, IF vulnerable, why it's vulnerable]
-    +++
-
-    DONT FORGET TO ADD THE +++ AT THE END
-
-    The following is all the javascript snippet you need to analyse
-    """))
-        search_scripts(urls)
-        print("")
-        print("=" * 45)
-# Send the output of the Javascript to ChatGPT (Verification of the vulnerability)
-def ChatGPT(JS_Unique_file_name):
-    from pyChatGPT import ChatGPT   # More information ---> https://github.com/terry3041/pyChatGPT
-
-    # Authentification via Token
-    TOKEN_FILE = "token.txt"
-    TOKEN_EXPIRATION_DAYS = 1
-
-    def get_token():
-        if os.path.isfile(TOKEN_FILE):
-            with open(TOKEN_FILE, "r") as f:
-                token, date_str = f.read().split()
-                expiration_date = datetime.datetime.strptime(date_str, "%Y-%m-%d") + datetime.timedelta(
-                    days=TOKEN_EXPIRATION_DAYS)
-                if datetime.datetime.today() < expiration_date:
-                    return token
-        print("""
-        1. Go to https://chat.openai.com/chat and open the developer tools by F12.
-        2. Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com.
-        3. Copy the value in the Cookie Value field.
-        """)
-        token = input("Enter your ChatGPT token: ")
-        with open(TOKEN_FILE, "w") as f:
-            f.write(f"{token} {datetime.datetime.today().strftime('%Y-%m-%d')}")
-        return token
-
-    # Authentication via Token
-    session_token = get_token()
-    print("")
-
-    def run_animation(resp):
+    def run_animation(future_search, wait_time):
+        print(f"The estimated wait time is {wait_time} seconds.")
         spinner = itertools.cycle(['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'])
-        while not resp['done']:
-            sys.stdout.write("\rChatGPT is reviewing the Javascript codes " + next(spinner))
+        while not future_search.done():
+            sys.stdout.write("\rAnalysing Javascript Elements " + next(spinner))
             sys.stdout.flush()
             time.sleep(0.5)
         print("")
 
-    def make_api_call(text, resp):
-        api = ChatGPT(session_token, chrome_args=['--headless, --disable-features=SafeBrowsing, --user-agent'])
-        resp.update(api.send_message(text))
-        api.clear_conversations()
-        resp['done'] = True
-
     if __name__ == '__main__':
+        file_name = JS_scanner_file_name
+
+        # Read in URLs from file
         while True:
-            filename = JS_Unique_file_name
+            file_name = JS_scanner_file_name
             try:
-                with open(filename, 'r') as file:
-                    text = file.read()
+                with open(file_name, "r") as f:
+                    urls = f.read().splitlines()
+                    f.seek(0)  # Reset file pointer to the beginning of the file
+                    wait_time = int(len(f.readlines()) / 2)
                 break  # Exit the loop if the file was successfully opened
             except FileNotFoundError:
                 print("Error: file not found. Please try again.\n")
 
-        resp = {'done': False}
-        thread = threading.Thread(target=make_api_call, args=(text, resp))
-        thread.start()
+        # Write output to a file
+        with open("JS_Unique_" + file_name, "a") as f:
+            # INSTRUCTIONS FOR CHAT-GPT
+            f.write(textwrap.dedent(instructions))
 
-        run_animation(resp)  # Start the animation
+        # Run the search_scripts function using concurrent.futures.ThreadPoolExecutor
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            future_search = executor.submit(search_scripts, urls)
+            run_animation(future_search, wait_time)
 
-        thread.join()
+def chatGPT_API(JS_Unique_file_name, api_key):
+    openai.api_key = api_key
+
+    def makeCall(message_arr):
+        completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=message_arr)
+        return completion.choices[0].message
+
+    def conversation():
+        message_array = []
+        while True:
+            filename = JS_Unique_file_name
+            try:
+                with open(filename, 'r') as file:
+                    user_input = file.read()
+                break  # Exit the loop if the file was successfully opened
+            except FileNotFoundError:
+                print("Error: The API key you provided is not valid, or the API_KEY.txt file is not accessible. Please check your API key and try again.\n")
+            exit()
 
         chatGPT_output_filename = filename[10:]
 
-        with open('chatGPT_' + chatGPT_output_filename, 'w') as f:
-            f.write(resp['message'])
-            print("")
-            print("=" * 45)
+        message_obj = {"role": "user", "content": user_input}
+        message_array.append(message_obj)
 
-    # Introduce a feature to divide the text in case the file size exceeds the limit
-    # Introduce a feature to calculate the seconds it will take to respond (add the estimated number of seconds before each of your response)
-# Reformulate the output of ChatGPT
+        resp = makeCall(message_array)
+        resp_str = str(resp)
+        resp_json = json.loads(resp_str)
+        content = resp_json["content"].strip()
+
+        with open('chatGPT_' + chatGPT_output_filename, 'w') as f:
+            f.write(content)
+
+    def run_animation(future_conversation):
+        spinner = itertools.cycle(['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'])
+        while not future_conversation.done():
+            sys.stdout.write("\rChatGPT is reviewing your Javascript codes " + next(spinner))
+            sys.stdout.flush()
+            time.sleep(0.5)
+        print("")
+
+    if __name__ == '__main__':
+
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            future_conversation = executor.submit(conversation)
+            run_animation(future_conversation)
+
 def JS_Output_Filtering(ChatGPT_file_name):
     if __name__ == '__main__':
         while True:
@@ -366,12 +375,12 @@ def JS_Output_Filtering(ChatGPT_file_name):
             snippet_data[id_value] = {"secure": secure_value, "text": text_value}
 
     # Write the data to a file
-    with open('JS_Vulnerable.txt', 'w') as f:
+    with open('Individual/JS_Vulnerable.txt', 'w') as f:
         for key, value in snippet_data.items():
             f.write("{" + f'"{key}": {value}' + "}\n")
-# Interpretation of the results from ChatGPT
+
 def Interpretation(JS_Unique_file_name, JS_URL_file_name):
-    file_name_1 = "JS_Vulnerable.txt"
+    file_name_1 = "Individual/JS_Vulnerable.txt"
     file_name_2 = JS_URL_file_name
     file_name_3 = JS_Unique_file_name
 
@@ -380,8 +389,8 @@ def Interpretation(JS_Unique_file_name, JS_URL_file_name):
         file1_lines = f.readlines()
 
     if not file1_lines:
-        print("No vulnerability found")
-        exit()
+        print("\033[1m\033[32mNo vulnerability found\033[0m")
+        return
 
     # Step 2: Read the contents of the second file and store each line as a string in a list
     with open(file_name_2, "r") as f:
@@ -398,7 +407,7 @@ def Interpretation(JS_Unique_file_name, JS_URL_file_name):
         id_js = line.split(":")[0].strip().strip("{").strip('"')
         text = line.split(":")[-1].strip().strip('}').strip().strip('"')
         text = text[1:-1]  # Remove first and last characters
-        output += "\nVulnerable ---> " + id_js
+        output += "\n\033[1m\033[31mThe JS code below may contain a vulnerability. ---> " + id_js + "\033[0m"
         output += "\n"
         output += "\nExplanation: " + text
         output += "\n"
@@ -422,7 +431,7 @@ def Interpretation(JS_Unique_file_name, JS_URL_file_name):
 
         # Step 5: Loop through each line in the second file and check if the id and JS values appear
         output += "\n"
-        output += "The Following URL's are touched by this vulnerability"
+        output += "The Following URL's are touched by this potential vulnerability"
         output += "\n" + '=' * 55 + "\n"
         found = False
         for line2 in file2_lines:
@@ -440,19 +449,55 @@ def Interpretation(JS_Unique_file_name, JS_URL_file_name):
     with open(final_name, "w") as f:
         f.write(output)
         print(output)
-# Interpretation of the results from ChatGPT
+
 def clean_up_files(Clean_up_file_name):
     for filename in os.listdir('.'):
-        if filename.endswith('.txt') and filename not in ['token.txt', Clean_up_file_name]:
+        if filename.endswith('.txt') and filename not in ['API_KEY.txt', Clean_up_file_name]:
             os.remove(filename)
 
+# ============================================================
 
-# call the functions to execute the code
+# Recall Variables
+max_recursion_level = Set_Variable1.max_recursion_level
+url = Set_Variable1.url
+
+JS_scanner_file_name = Set_Variable2.JS_scanner_file_name
+instructions = Set_Variable2.instructions
+
+JS_Unique_file_name = Set_Variable3.JS_Unique_file_name
+api_key = Set_Variable3.api_key
+
+ChatGPT_file_name = Set_Variable4.ChatGPT_file_name
+
+JS_URL_file_name = Set_Variable5.JS_URL_file_name
+Clean_up_file_name = Set_Variable6.Clean_up_file_name
+
+# Launch Functions
+class start_UI():
+    print("=" * 45)
+    print("")
 URL_Finder(url, max_recursion_level)
-JS_Scanner(JS_scanner_file_name)
-ChatGPT(JS_Unique_file_name)
-JS_Output_Filtering(ChatGPT_file_name)
-Interpretation(JS_Unique_file_name, JS_URL_file_name)
+class end_UI():
+    print("")
+    print("=" * 45)
 
-# If you desire to not clean-up the file, comment the following
+class start_UI():
+    print("")
+Javascript(JS_scanner_file_name, instructions)
+class end_UI():
+    print("")
+    print("=" * 45)
+
+class start_UI():
+    print("")
+chatGPT_API(JS_Unique_file_name, api_key)
+class end_UI():
+    print("")
+    print("=" * 45)
+
+JS_Output_Filtering(ChatGPT_file_name)
+
+class start_UI():
+    print("")
+Interpretation(JS_Unique_file_name, JS_URL_file_name)
 clean_up_files(Clean_up_file_name)
