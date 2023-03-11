@@ -4,7 +4,7 @@
   <img src="https://github.com/Hacking-Notes/Vulnerability-Scanner/blob/main/Documents/logo.png">
 </p>
 
-# VulnScan (CURRENTLY IN MAINTENENCE)
+# VulnScan
 
 Introducing VulnScan - the ultimate vulnerability scanning tool that'll make hackers cry and website owners rejoice (Depending on which side you are 😉)! Say goodbye to pesky security breaches and hello to peace of mind.
 
