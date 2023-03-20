@@ -375,12 +375,12 @@ def JS_Output_Filtering(ChatGPT_file_name):
             snippet_data[id_value] = {"secure": secure_value, "text": text_value}
 
     # Write the data to a file
-    with open('Individual/JS_Vulnerable.txt', 'w') as f:
+    with open('IndividualJS_Vulnerable.txt', 'w') as f:
         for key, value in snippet_data.items():
             f.write("{" + f'"{key}": {value}' + "}\n")
 
 def Interpretation(JS_Unique_file_name, JS_URL_file_name):
-    file_name_1 = "Individual/JS_Vulnerable.txt"
+    file_name_1 = "IndividualJS_Vulnerable.txt"
     file_name_2 = JS_URL_file_name
     file_name_3 = JS_Unique_file_name
 
