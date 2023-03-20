@@ -31,6 +31,7 @@ In terms of future development, vulnScan has several features in the pipeline th
 
 <ul style="list-style-type:disc;">
   <li>Change UI</li>
+  <li>Modify the requirements.txt file by removing any packages that are not being used.</li>
   <li>Add option to bring your own list of URL's</li>
   <li>Implement the URL's search function</li>
   <li>Add the ability to detect SQL vulnerabilities.</li>
