@@ -1,7 +1,7 @@
 
 <p align = "center">
   <a href="https://discord.com">
-  <img src="https://github.com/Hacking-Notes/Vulnerability-Scanner/blob/main/Documents/logo.png">
+  <img src="https://user-images.githubusercontent.com/118412415/226489342-97d1d92c-29de-4cba-91e8-71bcb87ca8d2.png">
 </p>
 
 # VulnScan
