@@ -8,7 +8,6 @@ import textwrap
 import requests
 import itertools
 import concurrent.futures
-import concurrent.futures
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 
@@ -44,12 +43,23 @@ class Set_Variable1():
             print("")
     except requests.exceptions.RequestException:
         print('Could not connect to the website')
+        exit()
     except:
         print('Invalid URL')
 url = Set_Variable1.url
 
-# Set file_name
-file_name = url[8:] + ".txt"
+# Set file_name (Remove any extension, subdomain are /)
+class file_name_integrity():
+    # Parse the URL
+    parsed_url = urlparse(url)
+    # Get the domain name without subdomains
+    domain_name = parsed_url.netloc.split('.')[-2] + '.' + parsed_url.netloc.split('.')[-1]
+    # Combine the domain name, domain extension, and file extension to create the file name
+    file_name = f"{domain_name}.txt"
+
+file_name = file_name_integrity.file_name
+
+print(file_name)
 
 #2
 class Set_Variable2():
@@ -91,6 +101,7 @@ class Set_Variable3():
         api_key = input("Include your OpenAI API key: ")
         with open(api_key_file, 'w') as f:
             f.write(api_key)
+            print("")
 
 #4
 class Set_Variable4():
@@ -107,7 +118,7 @@ class Set_Variable6():
 
 # ============================================================
 
-def URL_Finder(url, max_recursion_level):
+def URL_Finder(url, max_recursion_level, file_name):
 
     visited_urls = []
 
@@ -176,8 +187,7 @@ def URL_Finder(url, max_recursion_level):
             print("")
             for url in urls:
                 print(url)
-            parsed_url = urlparse(url)
-            file_name = parsed_url.netloc + '.txt'
+
             try:
                 with open(file_name, 'w') as f:
                     for url in urls:
@@ -292,6 +302,7 @@ def Javascript(JS_scanner_file_name, instructions):
                 break  # Exit the loop if the file was successfully opened
             except FileNotFoundError:
                 print("Error: file not found. Please try again.\n")
+                exit()
 
         # Write output to a file
         with open("JS_Unique_" + file_name, "a") as f:
@@ -375,12 +386,12 @@ def JS_Output_Filtering(ChatGPT_file_name):
             snippet_data[id_value] = {"secure": secure_value, "text": text_value}
 
     # Write the data to a file
-    with open('IndividualJS_Vulnerable.txt', 'w') as f:
+    with open('Individual_JS_Vulnerable.txt', 'w') as f:
         for key, value in snippet_data.items():
             f.write("{" + f'"{key}": {value}' + "}\n")
 
 def Interpretation(JS_Unique_file_name, JS_URL_file_name):
-    file_name_1 = "IndividualJS_Vulnerable.txt"
+    file_name_1 = "Individual_JS_Vulnerable.txt"
     file_name_2 = JS_URL_file_name
     file_name_3 = JS_Unique_file_name
 
@@ -452,7 +463,7 @@ def Interpretation(JS_Unique_file_name, JS_URL_file_name):
 
 def clean_up_files(Clean_up_file_name):
     for filename in os.listdir('.'):
-        if filename.endswith('.txt') and filename not in ['API_KEY.txt', Clean_up_file_name]:
+        if filename.endswith('.txt') and filename not in ['API_Key.txt', Clean_up_file_name]:
             os.remove(filename)
 
 # ============================================================
@@ -472,11 +483,12 @@ ChatGPT_file_name = Set_Variable4.ChatGPT_file_name
 JS_URL_file_name = Set_Variable5.JS_URL_file_name
 Clean_up_file_name = Set_Variable6.Clean_up_file_name
 
+
 # Launch Functions
 class start_UI():
     print("=" * 45)
     print("")
-URL_Finder(url, max_recursion_level)
+URL_Finder(url, max_recursion_level, file_name)
 class end_UI():
     print("")
     print("=" * 45)
