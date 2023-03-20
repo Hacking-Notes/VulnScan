@@ -59,8 +59,6 @@ class file_name_integrity():
 
 file_name = file_name_integrity.file_name
 
-print(file_name)
-
 #2
 class Set_Variable2():
     JS_scanner_file_name = file_name
