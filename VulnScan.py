@@ -367,7 +367,8 @@ def JS_Output_Filtering(ChatGPT_file_name):
                     text = file.read()
                 break  # Exit the loop if the file was successfully opened
             except FileNotFoundError:
-                print("Error: file not found. Please try again.\n")
+                print("Error: File size exceeds ChatGPT's capacity.\n")
+                exit()
 
     with open(file_name, 'r') as f:
         file_contents = f.read()
