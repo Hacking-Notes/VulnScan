@@ -4,9 +4,9 @@
   <img src="https://user-images.githubusercontent.com/118412415/226489342-97d1d92c-29de-4cba-91e8-71bcb87ca8d2.png">
 </p>
 
-# VulnScan
+# VulnScan (NO LONGER BEING MAINTAINED)
 
-Introducing VulnScan - the ultimate vulnerability scanning tool that'll make hackers cry and website owners rejoice (Depending on which side you are 😉)! Say goodbye to pesky security breaches and hello to peace of mind.
+Introducing VulnScan - the ultimate vulnerability scanning tool that'll make hackers cry and website owners rejoice! Say goodbye to pesky security breaches and hello to peace of mind.
 
 vulnScan is a powerful vulnerability scanning tool designed to help website owners protect their websites from cyber threats. It uses cutting-edge technology that leverages ChatGPT, an AI language model trained by OpenAI, to verify the JavaScript of your website and search for vulnerabilities. With vulnScan, you can detect security vulnerabilities and fix them before they can be exploited by cybercriminals.
 
