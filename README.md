@@ -47,4 +47,4 @@ The tool provided on this GitHub page is intended for educational and research p
 
 ---
 
-  ![image](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.net-model.com%2Fimg%2Flogo-discord.png&f=1&nofb=1&ipt=0b347aa70a05f91f4015e7e1049581eba2f397f35b8f27ebb18ae2190210f8ea&ipo=images)ㅤContact Me: Discord --> LXC#3100
+  ![image](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.net-model.com%2Fimg%2Flogo-discord.png&f=1&nofb=1&ipt=0b347aa70a05f91f4015e7e1049581eba2f397f35b8f27ebb18ae2190210f8ea&ipo=images)ㅤContact Me: Discord --> HackingNotes
