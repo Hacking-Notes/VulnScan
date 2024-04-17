@@ -1,10 +1,6 @@
-
-<p align = "center">
-  <a href="https://discord.com">
-  <img src="https://user-images.githubusercontent.com/118412415/226489342-97d1d92c-29de-4cba-91e8-71bcb87ca8d2.png">
-</p>
-
 # VulnScan (NO LONGER BEING MAINTAINED)
+
+![image (1)](https://github.com/Hacking-Notes/VulnScan/assets/118412415/7ddf3b21-0968-417f-a288-854dc686c9d4)
 
 Introducing VulnScan - the ultimate vulnerability scanning tool that'll make hackers cry and website owners rejoice! Say goodbye to pesky security breaches and hello to peace of mind.
 
