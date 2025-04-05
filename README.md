@@ -45,8 +45,3 @@ https://user-images.githubusercontent.com/118412415/221425598-136810fe-d3bc-47cb
 
 The tool provided on this GitHub page is intended for educational and research purposes only. The creators and maintainers of this tool are not responsible for any misuse or illegal use of the tool. It is the responsibility of the users to ensure that they comply with all applicable laws and regulations while using the tool.
 
----
-
-  <a href="https://discord.com">
-  <img width="300" src="https://github.com/Hacking-Notes/Hacking-Notes/assets/118412415/5f34c47e-8f9e-40ef-885d-91ee9a6c5989" alt="gif">
-  </a>
