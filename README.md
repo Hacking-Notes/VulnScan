@@ -1,3 +1,12 @@
+<div align="center">
+
+<kbd>&nbsp;SCANNER&nbsp;</kbd> &nbsp; <kbd>&nbsp;AI-POWERED&nbsp;</kbd> &nbsp; <kbd>&nbsp;ARCHIVED&nbsp;</kbd> &nbsp; 
+
+[![Website](https://img.shields.io/badge/WEBSITE-hacking--notes.com-ff3333?style=flat-square&labelColor=000000)](https://hacking-notes.com)
+[![License](https://img.shields.io/badge/LICENSE-MIT-3388ff?style=flat-square&labelColor=000000)](LICENSE)
+
+</div>
+
 # VulnScan (NO LONGER BEING MAINTAINED)
 
 ![image (1)](https://github.com/Hacking-Notes/VulnScan/assets/118412415/7ddf3b21-0968-417f-a288-854dc686c9d4)
@@ -45,3 +54,18 @@ https://user-images.githubusercontent.com/118412415/221425598-136810fe-d3bc-47cb
 
 The tool provided on this GitHub page is intended for educational and research purposes only. The creators and maintainers of this tool are not responsible for any misuse or illegal use of the tool. It is the responsibility of the users to ensure that they comply with all applicable laws and regulations while using the tool.
 
+
+<br>
+
+<div align="center">
+
+### ───────────────  HACKING NOTES ECOSYSTEM  ───────────────
+
+[![Website](https://img.shields.io/badge/🌐_WEBSITE-hacking--notes.com-ff3333?style=flat-square&labelColor=000000)](https://hacking-notes.com)
+[![Roadmap](https://img.shields.io/badge/🗺_ROADMAP-Hacker--Roadmap-f5f5f5?style=flat-square&labelColor=000000)](https://github.com/Hacking-Notes/Hacker-Roadmap)
+[![RedTeam](https://img.shields.io/badge/🔴_RED_TEAM-notes-ff3333?style=flat-square&labelColor=000000)](https://github.com/Hacking-Notes/RedTeam)
+[![BlueTeam](https://img.shields.io/badge/🔵_BLUE_TEAM-notes-3388ff?style=flat-square&labelColor=000000)](https://github.com/Hacking-Notes/BlueTeam)
+
+<sub><code>// part of the Hacking Notes toolkit — hacking-notes.com</code></sub>
+
+</div>
