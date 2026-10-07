@@ -1,13 +1,20 @@
+<a name="top"></a>
+
 <div align="center">
 
-<kbd>&nbsp;SCANNER&nbsp;</kbd> &nbsp; <kbd>&nbsp;AI-POWERED&nbsp;</kbd> &nbsp; <kbd>&nbsp;ARCHIVED&nbsp;</kbd> &nbsp; 
+<img src="assets/header.svg" alt="VulnScan" width="100%" />
 
-[![Website](https://img.shields.io/badge/WEBSITE-hacking--notes.com-ff3333?style=flat-square&labelColor=000000)](https://hacking-notes.com)
-[![License](https://img.shields.io/badge/LICENSE-MIT-3388ff?style=flat-square&labelColor=000000)](LICENSE)
+<br />
+
+<a href="https://github.com/Hacking-Notes/VulnScan/stargazers"><img src="https://img.shields.io/github/stars/Hacking-Notes/VulnScan?style=for-the-badge&logo=github&logoColor=1f2328&label=Stars&labelColor=f6f8fa&color=059669" alt="Stars" /></a>
+<a href="https://github.com/Hacking-Notes/VulnScan/network/members"><img src="https://img.shields.io/github/forks/Hacking-Notes/VulnScan?style=for-the-badge&logo=git&logoColor=1f2328&label=Forks&labelColor=f6f8fa&color=0284c7" alt="Forks" /></a>
+<a href="https://github.com/Hacking-Notes/VulnScan/commits"><img src="https://img.shields.io/github/last-commit/Hacking-Notes/VulnScan?style=for-the-badge&label=Updated&labelColor=f6f8fa&color=7c3aed" alt="Last commit" /></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/Hacking-Notes/VulnScan?style=for-the-badge&label=License&labelColor=f6f8fa&color=059669" alt="License" /></a>
+<a href="https://hacking-notes.com"><img src="https://img.shields.io/badge/More-hacking--notes.com-db2777?style=for-the-badge&labelColor=f6f8fa" alt="hacking-notes.com" /></a>
 
 </div>
 
-# VulnScan (NO LONGER BEING MAINTAINED)
+<br />
 
 ![image (1)](https://github.com/Hacking-Notes/VulnScan/assets/118412415/7ddf3b21-0968-417f-a288-854dc686c9d4)
 
@@ -30,6 +37,9 @@ Launch the script
 python3 VulnScan.py                                           ---> Launch the script
 ```
 
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
 ## Development
 
 In terms of future development, vulnScan has several features in the pipeline that will make it even more powerful and useful for website owners. These include:
@@ -46,26 +56,38 @@ In terms of future development, vulnScan has several features in the pipeline th
 
 VulnScan will enhance its versatility and customization with the introduction of new features, which will aid website owners and bug bounty hunters in identifying threats more easily and efficiently.
 
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
 ## Demo
 
 https://user-images.githubusercontent.com/118412415/221425598-136810fe-d3bc-47cb-a253-a25a4639d43b.mp4
+
+
+<img src="assets/divider.svg" width="100%" alt="" />
 
 ## Disclaimer
 
 The tool provided on this GitHub page is intended for educational and research purposes only. The creators and maintainers of this tool are not responsible for any misuse or illegal use of the tool. It is the responsibility of the users to ensure that they comply with all applicable laws and regulations while using the tool.
 
+<img src="assets/divider.svg" width="100%" alt="" />
 
-<br>
+## 🧰 Hacking Notes Ecosystem
 
 <div align="center">
 
-### ───────────────  HACKING NOTES ECOSYSTEM  ───────────────
-
-[![Website](https://img.shields.io/badge/🌐_WEBSITE-hacking--notes.com-ff3333?style=flat-square&labelColor=000000)](https://hacking-notes.com)
-[![Roadmap](https://img.shields.io/badge/🗺_ROADMAP-Hacker--Roadmap-f5f5f5?style=flat-square&labelColor=000000)](https://github.com/Hacking-Notes/Hacker-Roadmap)
-[![RedTeam](https://img.shields.io/badge/🔴_RED_TEAM-notes-ff3333?style=flat-square&labelColor=000000)](https://github.com/Hacking-Notes/RedTeam)
-[![BlueTeam](https://img.shields.io/badge/🔵_BLUE_TEAM-notes-3388ff?style=flat-square&labelColor=000000)](https://github.com/Hacking-Notes/BlueTeam)
-
-<sub><code>// part of the Hacking Notes toolkit — hacking-notes.com</code></sub>
+🌐 &nbsp;**[hacking-notes.com](https://hacking-notes.com)** &nbsp;·&nbsp; ✍️ &nbsp;**[blog](https://hacking-notes.medium.com/)** &nbsp;·&nbsp; 💬 &nbsp;**[discord](https://discord.gg/r68ameNHrD)**
 
 </div>
+
+| | Resource | What you get |
+| :-: | -------- | ------------ |
+| 🗺 | **[Hacker-Roadmap](https://github.com/Hacking-Notes/Hacker-Roadmap)** | Structured paths from beginner to pro — hobbyist, bug bounty, certs & degree. |
+| 🔴 | **[RedTeam Notes](https://github.com/Hacking-Notes/RedTeam)** | Offensive security notes: recon, exploitation, Windows & Linux. |
+| 🔷 | **[BlueTeam Notes](https://github.com/Hacking-Notes/BlueTeam)** | Defensive security notes: forensics, malware, log & packet analysis. |
+| 🧩 | **[Extensions](https://github.com/Hacking-Notes/Extensions)** | Curated Chrome extensions for ethical hacking & recon. |
+| 🔖 | **[Bookmarks](https://github.com/Hacking-Notes/Bookmarks)** | Curated hacker bookmark collection, one import away. |
+
+<img src="assets/footer.svg" width="100%" alt="" />
+
+<div align="right"><a href="#top">⬆ back to top</a></div>
